@@ -116,12 +116,11 @@
       </ul>
     </nav>
   </header>
-
-  <section class="video-player-section">
+<section class="video-player-section">
     <h2>Episode <span id="episode-number">1</span></h2>
     <div class="video-container">
       <video id="video-player" controls>
-        <source src="https://anihdplay.com/streaming.php?id=MjAyNjQ5&title=Kono+Subarashii+Sekai+ni+Bakuen+wo%21+Episode+2" type="video/mp4">
+        <source src="" type="video/mp4">
         Your browser does not support HTML5 video.
       </video>
     </div>
@@ -172,7 +171,17 @@
     document.getElementById("video-player").addEventListener("click", function () {
       this.play();
     });
+
+    // Get video source from URL
+    var url = window.location.href;
+    var hashIndex = url.indexOf("#");
+    if (hashIndex !== -1) {
+      var videoId = url.substring(hashIndex + 1);
+      var videoSource = `https://anihdplay.com/streaming.php?id=MjAyNjQ5&title=${videoId}`;
+      document.getElementById("video-player").src = videoSource;
+    }
   </script>
 </body>
 
 </html>
+  
