@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Anime Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function redirectToPlay(animeTitle) {
+      // Get the text content of the corresponding anime card's paragraph
+      var episode = document.getElementById(animeTitle).textContent;
+
+      // Redirect to play.html# followed by the episode text
+      window.location.href = "play.html#" + episode;
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>AnimeXPlay</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Anime List</a></li>
+        <li><a href="#">Genres</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-container">
+        <h2>Welcome to AnimeXPlay!</h2>
+        <p>Watch your favorite anime series online, anytime, anywhere.</p>
+        <a href="#" class="cta-button">Get Started</a>
+      </div>
+    </section>
+
+    <section class="latest-anime-section">
+      <h2>Latest Anime</h2>
+      <div class="anime-card" onclick="redirectToPlay('episode1')"> <!-- Added onclick event -->
+        <img src="anime1.jpg" alt="Anime 1">
+        <div class="anime-details">
+          <h3>Anime Title 1</h3>
+          <p id="episode1">Episode 1 - Subbed</p> <!-- Added id for episode text -->
+        </div>
+      </div>
+      <div class="anime-card" onclick="redirectToPlay('episode2')"> <!-- Added onclick event -->
+        <img src="anime2.jpg" alt="Anime 2">
+        <div class="anime-details">
+          <h3>Anime Title 2</h3>
+          <p id="episode2">Episode 1 - Dubbed</p> <!-- Added id for episode text -->
+        </div>
+      </div>
+      <div class="anime-card" onclick="redirectToPlay('episode3')"> <!-- Added onclick event -->
+        <img src="anime3.jpg" alt="Anime 3">
+        <div class="anime-details">
+          <h3>Anime Title 3</h3>
+          <p id="episode3">Episode 1 - Subbed</p> <!-- Added id for episode text -->
+        </div>
+      </div>
+    </section>
+
+    <section class="popular-anime-section">
+      <h2>Popular Anime</h2>
+      <div class="anime-card" onclick="redirectToPlay('episode4')"> <!-- Added onclick event -->
+        <img src="anime4.jpg" alt="Anime 4">
+        <div class="anime-details">
+          <h3>Anime Title 4</h3>
+          <p id="episode4">Episode 1 - Dubbed</p> <!-- Added id for episode text -->
+        </div>
+      </div>
+      <div class="anime-card" onclick="redirectToPlay('episode5')"> <!-- Added onclick event -->
+        <img src="anime5.jpg" alt="Anime 5">
+        <div class="anime-details">
+          <h3>Anime Title 5</h3>
+          <p id="episode5">Episode 1 - Subbed</p> <!-- Added id for episode text -->
+        </div>
+      </div>
+      <div class="anime-card" onclick="redirectToPlay('episode6')"> <!-- Added onclick event -->
+        <img src="anime6.jpg" alt="Anime 6">
+        <div class="anime-details">
+          <h3>Anime Title 6</h3>
+          <p id="episode6">Episode 1 - Dubbed</p> <!-- Added id for episode text -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Wanime. All rights reserved. | Website by [Your Name]</p>
+  </footer>
+</body>
+
+</html>

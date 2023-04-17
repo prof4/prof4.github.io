@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Anime Title - Watch Online</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional CSS to center the anime title and episode list */
+    .player-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* CSS for episode list buttons */
+    .episode-list-section {
+      margin-top: 20px; /* Add margin between player and episode list */
+      border: 1px solid #000; /* Add border around episode list */
+      padding: 20px; /* Add padding inside episode list */
+      background-color: #f0f0f0; /* Add gray background color */
+    }
+
+    .episode-list {
+      display: flex; /* Display items in a row */
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      justify-content: center; /* Center items horizontally */
+      align-items: center; /* Center items vertically */
+    }
+
+    .episode-list li {
+      margin-right: 10px; /* Add spacing between buttons */
+    }
+
+    .episode-list li:last-child {
+      margin-right: 0; /* Remove spacing on last button */
+    }
+
+    .episode-list li a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .episode-list li a:hover {
+      background-color: #333;
+    }
+
+    /* CSS for streaming options */
+    .streaming-options {
+      margin-top: 20px; /* Add margin between episode list and streaming options */
+    }
+
+    .streaming-options ul {
+      display: flex; /* Display items in a row */
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      justify-content: center; /* Center items horizontally */
+      align-items: center; /* Center items vertically */
+    }
+
+    .streaming-options li {
+      margin-right: 10px; /* Add spacing between buttons */
+    }
+
+    .streaming-options li:last-child {
+      margin-right: 0; /* Remove spacing on last button */
+    }
+
+    .streaming-options li a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .streaming-options li a:hover {
+      background-color: #333;
+    }
+
+    /* CSS to make video player larger */
+    .video-container {
+      width: 80%;
+      height: 0;
+      padding-bottom: 56.25%;
+      position: relative;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+
+<body>
+  <header>
+    <h1>AnimeXPlay</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Anime List</a></li>
+        <li><a href="#">Genres</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="streaming-options">
+    <h3>Streaming Options</h3>
+    <ul>
+      <li><a href="#" onclick="streamOnSite('https://anihdplay.com/streaming.php?id=MjAyNjQ5&title=')">Stream on Site 1</a></li>
+      <!-- Add more streaming options as needed -->
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 AnimeXPlay. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Function to change episode number and video source
+    function changeEpisode(episode) {
+      document.getElementById("episode-number").innerText = episode;
+      var videoSource = `https://anihdplay.com/streaming.php?id=MjAyNjQ5&title=episode-${episode}`;
+      document.getElementById("video-player").src = videoSource;
+    }
+
+    // Function to append video source to streaming site URL
+    function streamOnSite(url) {
+      var episode = document.getElementById("episode-number").innerText;
+      var videoSource = document.getElementById("video-player").src;
+      var hashIndex = videoSource.indexOf("#");
+      var videoId = videoSource.substring(hashIndex + 1);
+      var streamingUrl = `${url}${encodeURIComponent(videoId)}`;
+      window.open(streamingUrl);
+    }
+
+    // Add event listener to video player to start playing when clicked
+    document.getElementById("video-player").addEventListener("click", function () {
+      this.play();
+    });
+  </script>
+</body>
+
+</html>

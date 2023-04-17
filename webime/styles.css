@@ -1,0 +1,154 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic styling for the header */
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Logo styles */
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* Navigation bar styles */
+nav {
+  margin-top: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff7f50;
+}
+
+/* Main content section styles */
+main {
+  padding: 20px;
+}
+
+/* Section styles */
+section {
+  margin-bottom: 40px;
+}
+
+/* Heading styles */
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Anime card styles */
+.anime-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.anime-card:hover {
+  transform: translateY(-5px);
+}
+
+.anime-card img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.anime-card .anime-details {
+  flex: 1;
+  padding: 10px;
+}
+
+.anime-card h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.anime-card p {
+  font-size: 16px;
+  color: #777;
+}
+
+/* Footer styles */
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+  /* Stack navigation links vertically on small screens */
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  /* Add some space between sections on small screens */
+  section {
+    margin-bottom: 20px;
+  }
+
+  /* Reduce font size of headings on small screens */
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  /* Adjust anime card styles for small screens */
+  .anime-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .anime-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .anime-card .anime-details {
+    padding: 10px 0;
+  }
+}
