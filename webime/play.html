@@ -117,6 +117,27 @@
     </nav>
   </header>
 
+  <section class="video-player-section">
+    <h2>Episode <span id="episode-number">1</span></h2>
+    <div class="video-container">
+      <video id="video-player" controls>
+        <source src="" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+  </section>
+
+  <section class="episode-list-section">
+    <h3>Episode List</h3>
+    <ul class="episode-list">
+      <li><a href="#" onclick="changeEpisode(1)">Episode 1</a></li>
+      <li><a href="#" onclick="changeEpisode(2)">Episode 2</a></li>
+      <li><a href="#" onclick="changeEpisode(3)">Episode 3</a></li>
+      <li><a href="#" onclick="changeEpisode(4)">Episode 4</a></li>
+      <!-- Add more episode buttons as needed -->
+    </ul>
+  </section>
+
   <section class="streaming-options">
     <h3>Streaming Options</h3>
     <ul>
